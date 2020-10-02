@@ -1,0 +1,14 @@
+.movieThumb{
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Title{
+    width: 10em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+

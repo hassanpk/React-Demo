@@ -1,26 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MovieList from './MovieList';
+import MovieDetails from './MovieDetails';
+import MovieReviews from './MovieReviews';
+import { Switch, Route } from "react-router-dom";
+import Header from "./Shared/Header/header";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+  render() {
+   return (
+       <>
+        <Header />        
+        <main className="container-fluid" style={{paddingTop:"10px"}}>
+          <Switch>
+            <Route path='/movie/:id' render={(props) => {
+              return (<MovieDetails {...props} />)
+            }} />
+            <Route path='/reviews/:id' render={(props) => {
+              return (<MovieReviews {...props} />)
+            }} />
+            <Route path="/" component={MovieList} exact />
+          </Switch>
+        </main>
+      </>
+    );
+  }
 }
 
 export default App;
