@@ -31,10 +31,10 @@ const header = (props) => {
         <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Home</a>
+                    <Link className="nav-link" to={`/`}>Home</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Favourties</a>
+                    <Link className="nav-link" to={`/fav`}>Favourties</Link>
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Upcoming Movies</a>

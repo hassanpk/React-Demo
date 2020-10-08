@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './filter.module.css';
 
 const filters = (props) => {
+
+
     return <>
         <h3 style={{ textAlign: "center" }}><b>All Movies ({props.count})</b></h3>
         <div className={style.filters} >
@@ -9,7 +11,7 @@ const filters = (props) => {
                 <div className="form-inline" style={{ padding: "10px" }}>
                     <div className={'form-group ' + style.formGroupItem}>
                         <label htmlFor="filters"><b>List Filtering: </b></label>
-                        <input type="email" className="form-control" id="filters" />
+                        <input type="text" name="query" value={props.filters.query} onChange={props.filterChangeHandler} className="form-control" id="filters" />
                     </div>
                     <div className={'form-group ' + style.formGroupItem}>
                         <label htmlFor="filters"><b>Genre: </b></label>
@@ -41,9 +43,11 @@ const filters = (props) => {
                 </div>
 
                 <div className={'form-group ' + style.formGroupItem}>
-                    <label htmlFor="filters"><b>Language: </b></label>
-                    <select data-width="100%" className={'form-control ' + style.select} id="sel1">
-                        <option>ALL</option>
+                    <label htmlFor="filters"><b>Year: </b></label>
+                    <select onChange={props.filterChangeHandler} value={props.filters.year} name="year" data-width="100%" className={'form-control ' + style.select} id="sel1">
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
                     </select>
                 </div>
             </div>
