@@ -1,3 +1,2 @@
-import MovieDetails from './MovieDetails';
-
+import MovieDetails from './MovieDetails.Container';
 export default MovieDetails;

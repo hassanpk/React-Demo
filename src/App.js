@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import MovieList from './Pages/MovieList';
@@ -9,13 +9,14 @@ import Header from "./Shared/Header/header";
 import FavMovieList from "./Pages/FavMovieList";
 import { FavMovieProvider } from "./FavMovieContext";
 
-const App = () => {
+const App = (props) => {
 
   const [favmovies, setfavmovies] = useState([]);
 
   return (
     <FavMovieProvider value={[favmovies, setfavmovies]}>
       <Header />
+     
       <main className="container-fluid" style={{ paddingTop: "10px" }}>
         <Switch>
           <Route path='/movie/:id' render={(props) => {

@@ -1,3 +1,3 @@
-import MovieList from './MovieList';
+import MovieList from './Movie.Container';
 
 export default MovieList;

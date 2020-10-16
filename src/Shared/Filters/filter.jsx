@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import style from './filter.module.css';
 
 const filters = (props) => {
-
-
     return <>
         <h3 style={{ textAlign: "center" }}><b>All Movies ({props.count})</b></h3>
         <div className={style.filters} >
